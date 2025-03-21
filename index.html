@@ -23,299 +23,146 @@
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:wght@400;700&display=swap"
         rel="stylesheet" media="print" onload="this.media='all'">
 
-    <style>
-        *,
-        *:before,
-        *:after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0
-        }
-
-        body {
-            font-family: 'Lora', serif;
-            line-height: 1.6;
-            color: #3c2f2f;
-            background: #fff8e1;
-            overflow-x: hidden
-        }
-
-        header {
-            background: linear-gradient(to bottom, #ffca28, #ffa000);
-            padding: 20px 10px;
-            text-align: center;
-            position: relative;
-            z-index: 10
-        }
-
-        header h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 2em;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3)
-        }
-
-        header p {
-            color: #fff;
-            font-size: 1em
-        }
-
-        .nav-container {
-            position: sticky;
-            top: 0;
-            z-index: 10
-        }
-
-        .menu-toggle {
-            display: none;
-            padding: 10px;
-            background: #8d5524;
-            color: #fff;
-            border: none;
-            font-size: 1em;
-            cursor: pointer;
-            width: 100%;
-            text-align: left
-        }
-
-        .nav-menu {
-            display: flex;
-            justify-content: center;
-            background: #8d5524;
-            padding: 10px 0
-        }
-
-        .nav-menu a {
-            display: inline-block;
-            margin: 5px 10px;
-            text-decoration: none;
-            color: #fff;
-            font-family: 'Cinzel', serif;
-            font-size: 1em;
-            padding: 8px 12px;
-            transition: color 0.3s
-        }
-
-        .nav-menu a:hover,
-        .nav-menu a:focus {
-            color: #ffca28
-        }
-
-        .hero {
-            position: relative;
-            height: 50vh;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center
-        }
-
-        .parallax-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1
-        }
-
-        .hero-content {
-            text-align: center;
-            color: #fff;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-            z-index: 1;
-            padding: 0 15px
-        }
-
-        .hero-content h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 2em;
-            margin-bottom: 10px
-        }
-
-        .hero-content p {
-            font-size: 0.9em
-        }
-
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block
-            }
-
-            .nav-menu {
-                display: none
-            }
-
-            .nav-menu.active {
-                display: block
-            }
-
-            .nav-menu a {
-                display: block;
-                margin: 5px 0;
-                text-align: center;
-                padding: 10px
-            }
-
-            .hero-content h1 {
-                font-size: 1.5em
-            }
-
-            .hero-content p {
-                font-size: 0.8em
-            }
-        }
-    </style>
-
-    <link rel="stylesheet" href="/css/styles.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/css/styles.css" media="print" onload="this.media='all'">
 </head>
 
 <body>
-    <header>
-        <h1>Puur Gouda</h1>
-        <p>A Journey Through Cheese & History</p>
+    <header class="header">
+        <div class="header-content">
+            <h1 class="header-title">Puur Gouda</h1>
+            <p class="header-tagline">A Journey Through Cheese & History</p>
+        </div>
+        <button class="menu-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
     </header>
 
     <nav class="nav-container" aria-label="Main navigation">
-        <button class="menu-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
         <div id="nav-menu" class="nav-menu">
-            <a href="#history">History</a>
-            <a href="#cheese">Cheese</a>
-            <a href="#candles">Candles</a>
-            <a href="#market">Market</a>
-            <a href="#reeuwijk">Reeuwijk</a>
+            <a href="#history" class="nav-link">History</a>
+            <a href="#cheese" class="nav-link">Cheese</a>
+            <a href="#candles" class="nav-link">Candles</a>
+            <a href="#market" class="nav-link">Market</a>
+            <a href="#reeuwijk" class="nav-link">Reeuwijk</a>
         </div>
     </nav>
 
-    <main>
-        <div class="hero">
-            <picture class="parallax-bg">
+    <main class="main-content">
+        <section id="hero" class="hero">
+            <picture class="hero-bg">
                 <source srcset="/images/gouda_stadhuis-320w.webp 320w, /images/gouda_stadhuis-640w.webp 640w, /images/gouda_stadhuis-1200w.webp 1200w"
                     type="image/webp" sizes="(max-width: 768px) 100vw, 1200px">
                 <img src="/images/gouda_stadhuis.jpg" alt="Gouda Stadhuis with Visitors in the Square" decoding="async"
                     loading="eager" width="1200" height="800">
             </picture>
             <div class="hero-content">
-                <h1>Welcome to Gouda</h1>
-                <p>Savor the Legacy of a Historic Cheese City</p>
+                <h1 class="hero-title">Welcome to Gouda</h1>
+                <p class="hero-tagline">Savor the Legacy of a Historic Cheese City</p>
             </div>
-        </div>
+        </section>
 
-        <div class="content">
-            <section id="history" class="section">
-                <h2>A Tapestry of History</h2>
-                <p>Gouda’s medieval charm unfolds around the iconic Stadhuis, a masterpiece of Gothic architecture. Founded
-                    in the 11th century, the city’s Sint-Janskerk boasts breathtaking stained glass, while its canals
-                    whisper tales of a prosperous past as a trading hub along the Gouwe river.</p>
-                <div class="parallax-image">
-                    <picture>
-                        <source
-                            srcset="/images/gouda_stadhuis_exterior-320w.webp 320w, /images/gouda_stadhuis_exterior-640w.webp 640w, /images/gouda_stadhuis_exterior-1200w.webp 1200w"
-                            type="image/webp" sizes="(max-width: 768px) 100vw, 1200px">
-                        <img src="/images/gouda_stadhuis_exterior.jpg" alt="Exterior of Gouda Stadhuis" decoding="async"
-                            loading="lazy" width="1200" height="800">
-                    </picture>
-                </div>
-            </section>
-
-            <section id="cheese" class="section">
-                <h2>The Soul of Gouda Cheese</h2>
-                <p>From creamy young wheels to nutty aged treasures, Gouda cheese is a Dutch icon born here. Witness the
-                    vibrant cheese market in Markt and delve into centuries-old traditions of craftsmanship.</p>
-                <div class="cheese-gallery">
-                    <picture>
-                        <source srcset="/images/gouda_cheese_3-200w.webp 200w, /images/gouda_cheese_3-400w.webp 400w"
-                            type="image/webp" sizes="(max-width: 768px) 100vw, 400px">
-                        <img src="/images/gouda_cheese_3.jpg" alt="Gouda Cheese Wheels in Production" decoding="async"
-                            loading="lazy" width="400" height="300">
-                    </picture>
-                    <picture>
-                        <source srcset="/images/kabouter_gouda-200w.webp 200w, /images/kabouter_gouda-400w.webp 400w"
-                            type="image/webp" sizes="(max-width: 768px) 100vw, 400px">
-                        <img src="/images/kabouter_gouda.jpg" alt="Gouda Kabouter Statue" decoding="async" loading="lazy"
-                            width="400" height="300">
-                    </picture>
-                    <picture>
-                        <source srcset="/images/old_library-200w.webp 200w, /images/old_library-400w.webp"
-                            type="image/webp" sizes="(max-width: 768px) 100vw, 400px">
-                        <img src="/images/old_library.jpg" alt="Gouda Old Library" decoding="async" loading="lazy"
-                            width="400" height="300">
-                    </picture>
-                </div>
-            </section>
-
-            <section id="candles" class="section">
-                <h2>Candlelight & Tradition</h2>
-                <p>Gouda’s candle-making heritage glows brightest during the annual Candle Night, when the city transforms
-                    into a warm, flickering wonderland each December.</p>
-                <div class="parallax-image">
-                    <picture>
-                        <source
-                            srcset="/images/gouda_gracht_sunset-320w.webp 320w, /images/gouda_gracht_sunset-640w.webp 640w, /images/gouda_gracht_sunset-1200w.webp 1200w"
-                            type="image/webp" sizes="(max-width: 768px) 100vw, 1200px">
-                        <img src="/images/gouda_gracht_sunset.jpg" alt="Gouda Historic Buildings at Sunset"
-                            decoding="async" loading="lazy" width="1200" height="800">
-                    </picture>
-                </div>
-            </section>
-
-            <section id="market" class="section">
-                <h2>The Bustling Markt</h2>
-                <p>The historic Markt square comes alive with the cheese market, a tradition steeped in Gouda’s identity.
-                    Traders, farmers, and visitors mingle amidst golden wheels of cheese.</p>
-                <div class="parallax-image">
-                    <picture>
-                        <source
-                            srcset="/images/courtyard_red_shutters-320w.webp 320w, /images/courtyard_red_shutters-640w.webp 640w, /images/courtyard_red_shutters-1200w.webp 1200w"
-                            type="image/webp" sizes="(max-width: 768px) 100vw, 1200px">
-                        <img src="/images/courtyard_red_shutters.jpg"
-                            alt="Courtyard with Red Shutters and Outdoor Seating" decoding="async" loading="lazy"
-                            width="1200" height="800">
-                    </picture>
-                </div>
-            </section>
-
-            <section id="reeuwijk" class="section">
-                <h2>Reeuwijkse Plassen</h2>
-                <p>Just beyond the city, the serene Reeuwijkse Plassen lakes offer a peaceful retreat, framed by nature’s
-                    beauty.</p>
-                <div class="parallax-image">
-                    <picture>
-                        <source
-                            srcset="/images/reeuwijkse_plassen-320w.webp 320w, /images/reeuwijkse_plassen-640w.webp 640w, /images/reeuwijkse_plassen-1200w.webp 1200w"
-                            type="image/webp" sizes="(max-width: 768px) 100vw, 1200px">
-                        <img src="/images/reeuwijkse_plassen.jpg" alt="Swan Resting by Reeuwijkse Plassen Lake"
-                            decoding="async" loading="lazy" width="1200" height="800">
-                    </picture>
-                </div>
-            </section>
-
-            <div class="newsletter">
-                <h2>Stay in the Loop</h2>
-                <p>Subscribe for Gouda’s latest events and cheese secrets!</p>
-                <form aria-label="Newsletter subscription form">
-                    <label for="email" class="visually-hidden">Email address</label>
-                    <input type="email" id="email" placeholder="Your email" required>
-                    <button type="submit">Subscribe</button>
-                </form>
+        <section id="history" class="section">
+            <h2 class="section-title">A Tapestry of History</h2>
+            <p class="section-text">Gouda’s medieval charm unfolds around the iconic Stadhuis, a masterpiece of Gothic
+                architecture. Founded in the 11th century, the city’s Sint-Janskerk boasts breathtaking stained glass,
+                while its canals whisper tales of a prosperous past as a trading hub along the Gouwe river.</p>
+            <div class="parallax-image">
+                <picture>
+                    <source
+                        srcset="/images/gouda_stadhuis_exterior-320w.webp 320w, /images/gouda_stadhuis_exterior-640w.webp 640w, /images/gouda_stadhuis_exterior-1200w.webp 1200w"
+                        type="image/webp" sizes="(max-width: 768px) 100vw, 1200px">
+                    <img src="/images/gouda_stadhuis_exterior.jpg" alt="Exterior of Gouda Stadhuis" decoding="async"
+                        loading="lazy" width="1200" height="800">
+                </picture>
             </div>
-        </div>
+        </section>
+
+        <section id="cheese" class="section">
+            <h2 class="section-title">The Soul of Gouda Cheese</h2>
+            <p class="section-text">From creamy young wheels to nutty aged treasures, Gouda cheese is a Dutch icon born
+                here. Witness the vibrant cheese market in Markt and delve into centuries-old traditions of craftsmanship.</p>
+            <div class="cheese-gallery">
+                <picture>
+                    <source srcset="/images/gouda_cheese_3-200w.webp 200w, /images/gouda_cheese_3-400w.webp 400w"
+                        type="image/webp" sizes="(max-width: 768px) 100vw, 400px">
+                    <img src="/images/gouda_cheese_3.jpg" alt="Gouda Cheese Wheels in Production" decoding="async"
+                        loading="lazy" width="400" height="300">
+                </picture>
+                <picture>
+                    <source srcset="/images/kabouter_gouda-200w.webp 200w, /images/kabouter_gouda-400w.webp 400w"
+                        type="image/webp" sizes="(max-width: 768px) 100vw, 400px">
+                    <img src="/images/kabouter_gouda.jpg" alt="Gouda Kabouter Statue" decoding="async" loading="lazy"
+                        width="400" height="300">
+                </picture>
+                <picture>
+                    <source srcset="/images/old_library-200w.webp 200w, /images/old_library-400w.webp"
+                        type="image/webp" sizes="(max-width: 768px) 100vw, 400px">
+                    <img src="/images/old_library.jpg" alt="Gouda Old Library" decoding="async" loading="lazy"
+                        width="400" height="300">
+                </picture>
+            </div>
+        </section>
+
+        <section id="candles" class="section">
+            <h2 class="section-title">Candlelight & Tradition</h2>
+            <p class="section-text">Gouda’s candle-making heritage glows brightest during the annual Candle Night, when
+                the city transforms into a warm, flickering wonderland each December.</p>
+            <div class="parallax-image">
+                <picture>
+                    <source
+                        srcset="/images/gouda_gracht_sunset-320w.webp 320w, /images/gouda_gracht_sunset-640w.webp 640w, /images/gouda_gracht_sunset-1200w.webp 1200w"
+                        type="image/webp" sizes="(max-width: 768px) 100vw, 1200px">
+                    <img src="/images/gouda_gracht_sunset.jpg" alt="Gouda Historic Buildings at Sunset"
+                        decoding="async" loading="lazy" width="1200" height="800">
+                </picture>
+            </div>
+        </section>
+
+        <section id="market" class="section">
+            <h2 class="section-title">The Bustling Markt</h2>
+            <p class="section-text">The historic Markt square comes alive with the cheese market, a tradition steeped in
+                Gouda’s identity. Traders, farmers, and visitors mingle amidst golden wheels of cheese.</p>
+            <div class="parallax-image">
+                <picture>
+                    <source
+                        srcset="/images/courtyard_red_shutters-320w.webp 320w, /images/courtyard_red_shutters-640w.webp, /images/courtyard_red_shutters-1200w.webp"
+                        type="image/webp" sizes="(max-width: 768px) 100vw, 1200px">
+                    <img src="/images/courtyard_red_shutters.jpg"
+                        alt="Courtyard with Red Shutters and Outdoor Seating" decoding="async" loading="lazy"
+                        width="1200" height="800">
+                </picture>
+            </div>
+        </section>
+
+        <section id="reeuwijk" class="section">
+            <h2 class="section-title">Reeuwijkse Plassen</h2>
+            <p class="section-text">Just beyond the city, the serene Reeuwijkse Plassen lakes offer a peaceful retreat,
+                framed by nature’s beauty.</p>
+            <div class="parallax-image">
+                <picture>
+                    <source
+                        srcset="/images/reeuwijkse_plassen-320w.webp 320w, /images/reeuwijkse_plassen-640w.webp, /images/reeuwijkse_plassen-1200w.webp"
+                        type="image/webp" sizes="(max-width: 768px) 100vw, 1200px">
+                    <img src="/images/reeuwijkse_plassen.jpg" alt="Swan Resting by Reeuwijkse Plassen Lake"
+                        decoding="async" loading="lazy" width="1200" height="800">
+                </picture>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <h2 class="section-title">Stay in the Loop</h2>
+            <p class="section-text">Subscribe for Gouda’s latest events and cheese secrets!</p>
+            <form aria-label="Newsletter subscription form" class="newsletter-form">
+                <label for="email" class="visually-hidden">Email address</label>
+                <input type="email" id="email" placeholder="Your email" required class="newsletter-input">
+                <button type="submit" class="newsletter-button">Subscribe</button>
+            </form>
+        </section>
     </main>
 
-    <footer>
+    <footer class="footer">
         <p>© 2025 Puur Gouda | Crafted with Love for Cheese & History</p>
     </footer>
 
-    <script defer src="/js/parallax.min.js"></script>
-    <script defer>
-        // Toggle mobile menu
-        document.querySelector('.menu-toggle').addEventListener('click', () => {
-            const menu = document.querySelector('#nav-menu');
-            const isExpanded = menu.classList.toggle('active');
-            document.querySelector('.menu-toggle').setAttribute('aria-expanded', isExpanded);
-        });
-    </script>
+    <script defer src="/js/script.js"></script>
 </body>
 
 </html>
