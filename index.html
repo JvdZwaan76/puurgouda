@@ -39,13 +39,13 @@
 
         .hero {
             position: relative;
-            height: 300px;
+            height: 500px; /* Increased hero height for better visual impact */
             overflow: hidden;
         }
 
         .hero-carousel {
             display: flex;
-            transition: transform 0.5s ease-in-out;
+            transition: transform 0.8s ease-in-out; /* Smoother transition */
         }
 
         .hero-slide {
@@ -59,20 +59,28 @@
             text-align: center;
             color: white;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-in-out; /* Fade-in animation for slides */
         }
 
         .hero-slide h1 {
-            font-size: 2em;
+            font-size: 3em; /* Larger font size for impact */
+            margin-bottom: 10px;
+            animation: slideUp 1s ease-in-out; /* Slide-up animation for text */
+        }
+
+        .hero-slide p {
+            font-size: 1.2em;
+            animation: slideUp 1.2s ease-in-out;
         }
 
         .content {
-            padding: 20px;
+            padding: 40px;
             max-width: 800px;
             margin: 0 auto;
         }
 
         .section {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         .cheese-images {
@@ -91,7 +99,7 @@
             background-color: #f8f8f8;
             padding: 20px;
             text-align: center;
-            margin-top: 20px;
+            margin-top: 30px;
         }
 
         .newsletter input[type="email"], .newsletter button {
@@ -105,7 +113,7 @@
           background-color: #e0e0e0;
           padding: 20px;
           text-align: center;
-          margin-top: 20px;
+          margin-top: 30px;
         }
 
         footer {
@@ -132,30 +140,14 @@
           margin: 10px;
         }
 
-        @media (min-width: 768px) {
-            .hero {
-                height: 500px;
-            }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
-            .hero-slide h1 {
-                font-size: 3em;
-            }
-
-            .content {
-                padding: 40px;
-            }
-
-            nav a {
-                margin: 0 15px;
-            }
-
-            .cheese-images img {
-                max-width: 300px;
-            }
-
-            .newsletter input[type="email"], .newsletter button {
-                width: auto;
-            }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
     </style>
 </head>
@@ -211,16 +203,11 @@
             <h2>Gouda Cheese: A Dutch Treasure</h2>
             <p>Gouda cheese, a worldwide favorite, originates from this region. The traditional cheese market in Markt is a must-see. Learn about the cheese-making process and sample various ages of Gouda, from young to aged.</p>
             <div class="cheese-images">
-              <img src="/images/gouda_cheese_3.jpg" alt="Gouda Cheese">
-              <img src="/images/kabouter_gouda.jpg" alt="Gouda Kabouter">
-              <img src="/images/old_library.jpg" alt="Gouda Old Library">
+                <img src="/images/gouda_cheese_3.jpg" alt="Gouda Cheese">
+                <img src="/images/kabouter_gouda.jpg" alt="Gouda Kabouter">
+                <img src="/images/old_library.jpg" alt="Gouda Old Library">
             </div>
             <p>The cheese is made from cow's milk and comes in various ages, each with a distinct flavor profile. From young Gouda, which is mild and creamy, to aged Gouda, which is rich and nutty, there's a variety to suit every palate. The cheese is traditionally made by farmers in the surrounding region, and the process involves curdling the milk, pressing the curds into molds, and aging the cheese for varying periods.</p>
         </section>
 
-        <section id="candles" class="section">
-            <h2>Gouda Candles: A Warm Tradition</h2>
-            <p>Gouda is also known for its high-quality candles. The annual Gouda Candle Night in December is a magical event.</p>
-        </section>
-
-        <section id="market
+        <section id="candles" class
