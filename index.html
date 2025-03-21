@@ -39,17 +39,18 @@
 
         .hero {
             position: relative;
-            height: 500px; /* Increased hero height for better visual impact */
+            height: 500px;
             overflow: hidden;
         }
 
         .hero-carousel {
             display: flex;
-            transition: transform 0.8s ease-in-out; /* Smoother transition */
+            width: 300%; /* Important for carousel width */
+            transition: transform 0.8s ease-in-out;
         }
 
         .hero-slide {
-            min-width: 100%;
+            min-width: 33.33%; /* Each slide takes 1/3 of the carousel width */
             height: 100%;
             background-size: cover;
             background-position: center;
@@ -59,13 +60,13 @@
             text-align: center;
             color: white;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            animation: fadeIn 1s ease-in-out; /* Fade-in animation for slides */
+            animation: fadeIn 1s ease-in-out;
         }
 
         .hero-slide h1 {
-            font-size: 3em; /* Larger font size for impact */
+            font-size: 3em;
             margin-bottom: 10px;
-            animation: slideUp 1s ease-in-out; /* Slide-up animation for text */
+            animation: slideUp 1s ease-in-out;
         }
 
         .hero-slide p {
@@ -149,6 +150,20 @@
             from { transform: translateY(20px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
+
+        .contact-form {
+          margin-top: 30px;
+          padding: 20px;
+          background-color: #f8f8f8;
+        }
+
+        .contact-form input, .contact-form textarea, .contact-form button{
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 10px;
+          box-sizing: border-box;
+        }
+
     </style>
 </head>
 <body>
@@ -165,6 +180,7 @@
         <a href="#market">Market</a>
         <a href="#reeuwijk">Reeuwijk</a>
         <a href="#weather">Weather</a>
+        <a href="#contact">Contact</a>
         <a href="#advertise">Advertise</a>
     </nav>
 
@@ -207,7 +223,3 @@
                 <img src="/images/kabouter_gouda.jpg" alt="Gouda Kabouter">
                 <img src="/images/old_library.jpg" alt="Gouda Old Library">
             </div>
-            <p>The cheese is made from cow's milk and comes in various ages, each with a distinct flavor profile. From young Gouda, which is mild and creamy, to aged Gouda, which is rich and nutty, there's a variety to suit every palate. The cheese is traditionally made by farmers in the surrounding region, and the process involves curdling the milk, pressing the curds into molds, and aging the cheese for varying periods.</p>
-        </section>
-
-        <section id="candles" class
