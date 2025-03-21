@@ -38,10 +38,21 @@
         }
 
         .hero {
-            background-image: url('gouda_stadhuis.jpg');
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .hero-carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .hero-slide {
+            min-width: 100%;
+            height: 100%;
             background-size: cover;
             background-position: center;
-            height: 300px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -50,7 +61,7 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
-        .hero h1 {
+        .hero-slide h1 {
             font-size: 2em;
         }
 
@@ -126,7 +137,7 @@
                 height: 500px;
             }
 
-            .hero h1 {
+            .hero-slide h1 {
                 font-size: 3em;
             }
 
@@ -166,9 +177,25 @@
     </nav>
 
     <div class="hero">
-        <div>
-            <h1>Discover the Charm of Gouda</h1>
-            <p>Explore history, cheese, and the beautiful surroundings.</p>
+        <div class="hero-carousel" id="heroCarousel">
+            <div class="hero-slide" style="background-image: url('/images/gouda_stadhuis.jpg');">
+                <div>
+                    <h1>Welcome to Gouda</h1>
+                    <p>Discover the rich history and charm.</p>
+                </div>
+            </div>
+            <div class="hero-slide" style="background-image: url('/images/gouda_gracht_sunset.jpg');">
+                <div>
+                    <h1>Gouda Cheese Market</h1>
+                    <p>Experience the traditional cheese trading.</p>
+                </div>
+            </div>
+            <div class="hero-slide" style="background-image: url('/images/reeuwijkse_plassen.jpg');">
+                <div>
+                    <h1>Reeuwijkse Plassen</h1>
+                    <p>Explore the beautiful lakes and nature.</p>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -184,8 +211,8 @@
             <h2>Gouda Cheese: A Dutch Treasure</h2>
             <p>Gouda cheese, a worldwide favorite, originates from this region. The traditional cheese market in Markt is a must-see. Learn about the cheese-making process and sample various ages of Gouda, from young to aged.</p>
             <div class="cheese-images">
+              <img src="/images/gouda_cheese_3.jpg" alt="Gouda Cheese">
               <img src="/images/kabouter_gouda.jpg" alt="Gouda Kabouter">
-              <img src="gouda_cheese_2.jpg" alt="Gouda Cheese Market">
               <img src="/images/old_library.jpg" alt="Gouda Old Library">
             </div>
             <p>The cheese is made from cow's milk and comes in various ages, each with a distinct flavor profile. From young Gouda, which is mild and creamy, to aged Gouda, which is rich and nutty, there's a variety to suit every palate. The cheese is traditionally made by farmers in the surrounding region, and the process involves curdling the milk, pressing the curds into molds, and aging the cheese for varying periods.</p>
@@ -196,17 +223,4 @@
             <p>Gouda is also known for its high-quality candles. The annual Gouda Candle Night in December is a magical event.</p>
         </section>
 
-        <section id="market" class="section">
-            <h2>The Gouda Market: A Lively Experience</h2>
-            <p>The Markt offers local products like cheese and stroopwafels. Held every Wednesday and Saturday.</p>
-        </section>
-
-        <section id="reeuwijk" class="section">
-            <h2>Reeuwijk and the Reeuwijkse Plassen</h2>
-            <p>Just a short distance from Gouda, Reeuwijk is known for its beautiful lakes, the Reeuwijkse Plassen. This area is perfect for boating, swimming, and nature walks. Explore the serene landscapes and enjoy the outdoor activities. Reeuwijk offers a peaceful retreat with its scenic waterways and green surroundings, ideal for relaxation and recreation.</p>
-            <img src="reeuwijkse_plassen.jpg" alt="Reeuwijkse Plassen" style="max-width: 100%;">
-        </section>
-
-        <section id="weather" class="section">
-          <h2>Local Weather</h2>
-          <div id="weather-widget">
+        <section id="market
