@@ -8,7 +8,9 @@
     <meta name="keywords" content="Gouda, Netherlands, Gouda cheese, historic city, cheese market, Gouda candles, Stadhuis, Reeuwijkse Plassen, Dutch heritage">
     <meta name="author" content="Puur Gouda">
     <link rel="canonical" href="https://www.puurgouda.com/">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <style>
         * {
             margin: 0;
@@ -81,8 +83,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-size: cover;
-            background-position: center;
+            object-fit: cover;
             z-index: -1;
             transform: translateZ(0);
             transition: transform 0.1s ease-out;
@@ -130,12 +131,19 @@
         .parallax-image {
             position: relative;
             height: 400px;
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
             margin: 20px 0;
             border-radius: 10px;
             overflow: hidden;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .parallax-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .cheese-gallery {
@@ -223,7 +231,10 @@
     </nav>
 
     <div class="hero">
-        <div class="parallax-bg" style="background-image: url('/images/gouda_stadhuis.jpg');"></div>
+        <picture class="parallax-bg">
+            <source srcset="/images/gouda_stadhuis.webp" type="image/webp">
+            <img src="/images/gouda_stadhuis.jpg" alt="Gouda Stadhuis" decoding="async" loading="eager">
+        </picture>
         <div class="hero-content">
             <h1>Welcome to Gouda</h1>
             <p>Savor the Legacy of a Historic Cheese City</p>
@@ -234,23 +245,42 @@
         <section id="history" class="section">
             <h2>A Tapestry of History</h2>
             <p>Gouda’s medieval charm unfolds around the iconic Stadhuis, a masterpiece of Gothic architecture. Founded in the 11th century, the city’s Sint-Janskerk boasts breathtaking stained glass, while its canals whisper tales of a prosperous past as a trading hub along the Gouwe river.</p>
-            <div class="parallax-image" style="background-image: url('/images/gouda_stadhuis_exterior.jpg');"></div>
+            <div class="parallax-image">
+                <picture>
+                    <source srcset="/images/gouda_stadhuis_exterior.webp" type="image/webp">
+                    <img src="/images/gouda_stadhuis_exterior.jpg" alt="Exterior of Gouda Stadhuis" decoding="async" loading="lazy">
+                </picture>
+            </div>
         </section>
 
         <section id="cheese" class="section">
             <h2>The Soul of Gouda Cheese</h2>
             <p>From creamy young wheels to nutty aged treasures, Gouda cheese is a Dutch icon born here. Witness the vibrant cheese market in Markt and delve into centuries-old traditions of craftsmanship.</p>
             <div class="cheese-gallery">
-                <img src="/images/gouda_cheese_3.jpg" alt="Gouda Cheese">
-                <img src="/images/kabouter_gouda.jpg" alt="Gouda Kabouter">
-                <img src="/images/old_library.jpg" alt="Gouda Old Library">
+                <picture>
+                    <source srcset="/images/gouda_cheese_3.webp" type="image/webp">
+                    <img src="/images/gouda_cheese_3.jpg" alt="Gouda Cheese" decoding="async" loading="lazy">
+                </picture>
+                <picture>
+                    <source srcset="/images/kabouter_gouda.webp" type="image/webp">
+                    <img src="/images/kabouter_gouda.jpg" alt="Gouda Kabouter" decoding="async" loading="lazy">
+                </picture>
+                <picture>
+                    <source srcset="/images/old_library.webp" type="image/webp">
+                    <img src="/images/old_library.jpg" alt="Gouda Old Library" decoding="async" loading="lazy">
+                </picture>
             </div>
         </section>
 
         <section id="candles" class="section">
             <h2>Candlelight & Tradition</h2>
             <p>Gouda’s candle-making heritage glows brightest during the annual Candle Night, when the city transforms into a warm, flickering wonderland each December.</p>
-            <div class="parallax-image" style="background-image: url('/images/gouda_gracht_sunset.jpg');"></div>
+            <div class="parallax-image">
+                <picture>
+                    <source srcset="/images/gouda_gracht_sunset.webp" type="image/webp">
+                    <img src="/images/gouda_gracht_sunset.jpg" alt="Gouda Gracht Sunset" decoding="async" loading="lazy">
+                </picture>
+            </div>
         </section>
 
         <section id="market" class="section">
@@ -261,7 +291,12 @@
         <section id="reeuwijk" class="section">
             <h2>Reeuwijkse Plassen</h2>
             <p>Just beyond the city, the serene Reeuwijkse Plassen lakes offer a peaceful retreat, framed by nature’s beauty.</p>
-            <div class="parallax-image" style="background-image: url('/images/reeuwijkse_plassen.jpg');"></div>
+            <div class="parallax-image">
+                <picture>
+                    <source srcset="/images/reeuwijkse_plassen.webp" type="image/webp">
+                    <img src="/images/reeuwijkse_plassen.jpg" alt="Reeuwijkse Plassen" decoding="async" loading="lazy">
+                </picture>
+            </div>
         </section>
 
         <div class="newsletter">
@@ -273,13 +308,13 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 Puur Gouda | Crafted with Love for Cheese & History</p>
+        <p>© 2025 Puur Gouda | Crafted with Love for Cheese & History</p>
     </footer>
 
-    <script>
+    <script defer>
         // Simple parallax effect
         window.addEventListener('scroll', () => {
-            const parallaxBgs = document.querySelectorAll('.parallax-bg, .parallax-image');
+            const parallaxBgs = document.querySelectorAll('.parallax-bg, .parallax-image img');
             parallaxBgs.forEach(bg => {
                 const speed = 0.5;
                 const yPos = -(window.scrollY * speed);
