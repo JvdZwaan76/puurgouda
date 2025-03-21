@@ -23,7 +23,7 @@
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:wght@400;700&display=swap"
         rel="stylesheet" media="print" onload="this.media='all'">
 
-    <link rel="stylesheet" href="/css/styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/css/styles.min.css" media="print" onload="this.media='all'">
 </head>
 
 <body>
@@ -150,7 +150,7 @@
         <section class="newsletter">
             <h2 class="section-title">Stay in the Loop</h2>
             <p class="section-text">Subscribe for Gouda’s latest events and cheese secrets!</p>
-            <form aria-label="Newsletter subscription form" class="newsletter-form">
+            <form aria-label="Newsletter subscription form">
                 <label for="email" class="visually-hidden">Email address</label>
                 <input type="email" id="email" placeholder="Your email" required class="newsletter-input">
                 <button type="submit" class="newsletter-button">Subscribe</button>
@@ -162,7 +162,15 @@
         <p>© 2025 Puur Gouda | Crafted with Love for Cheese & History</p>
     </footer>
 
-    <script defer src="/js/script.js"></script>
+    <script defer src="/js/parallax.min.js"></script>
+    <script defer>
+        // Toggle mobile menu
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            const menu = document.querySelector('#nav-menu');
+            const isExpanded = menu.classList.toggle('active');
+            document.querySelector('.menu-toggle').setAttribute('aria-expanded', isExpanded);
+        });
+    </script>
 </body>
 
 </html>
